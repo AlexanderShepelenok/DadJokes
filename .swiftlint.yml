@@ -52,6 +52,7 @@ opt_in_rules:
 
 disabled_rules:
   - identifier_name
+  - switch_case_alignment
   
 colon:
   apply_to_dictionaries: false

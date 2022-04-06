@@ -21,7 +21,7 @@ enum DadJokeAPI: Endpoint {
                 return "/j/\(jokeId)"
         }
     }
-    
+
     var httpMethod: HTTPMethod { .get }
 
     var headers: [String: String] { ["Accept": "application/json"] }

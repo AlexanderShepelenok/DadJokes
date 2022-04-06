@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIActivityIndicatorView {
+
     func showAndStart(duration: TimeInterval = 0.3) {
         self.alpha = 0.0
         UIView.animate(withDuration: duration) {
@@ -24,4 +25,5 @@ extension UIActivityIndicatorView {
             self.alpha = 0.0
         }
     }
+
 }

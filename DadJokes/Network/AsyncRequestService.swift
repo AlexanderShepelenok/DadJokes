@@ -14,7 +14,7 @@ enum AsyncRequestServiceError: Error {
     case unauthorized
     case unexpectedStatusCode
     case unknown
-    
+
     var message: String {
         switch self {
         case .decoding: return "Decoding error"
@@ -28,16 +28,18 @@ class AsyncRequestService {
 
     let urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.default)
     let decoder: JSONDecoder = JSONDecoder()
-    
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseType: T.Type) async -> Result<T, AsyncRequestServiceError> {
+
+    func sendRequest<T: Decodable>(endpoint: Endpoint,
+                                   responseType: T.Type) async
+    -> Result<T, AsyncRequestServiceError> {
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
             return .failure(.invalidURL)
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.httpMethod.rawValue
         request.allHTTPHeaderFields = endpoint.headers
-        
+
         do {
             let (data, response) = try await urlSession.data(for: request, delegate: nil)
             guard let response = response as? HTTPURLResponse else {

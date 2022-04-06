@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F60600327F5A75300EF2551 /* UIActivityIndicator+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600227F5A75300EF2551 /* UIActivityIndicator+Visibility.swift */; };
+		1F5532D527FEC8F5006B0EC7 /* DadJokeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */; };
+		1F5532E5280354F1006B0EC7 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */; };
+		1F5532E9280411B5006B0EC7 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */; };
+		1F5532ED280415CB006B0EC7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532EC280415CB006B0EC7 /* RootViewController.swift */; };
+		1F5532F0280449DD006B0EC7 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532EF280449DD006B0EC7 /* ViewControllerFactory.swift */; };
+		1F5532F2280449FD006B0EC7 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */; };
+		1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */; };
+		1F60600327F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */; };
+		1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */; };
+		1F60600927F5CBBE00EF2551 /* CoreDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */; };
+		1F60600B27F5CBC300EF2551 /* CoreDataJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */; };
+		1F833D6A27FDB48D000DF4EA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833D6927FDB48D000DF4EA /* SignInViewController.swift */; };
+		1F833D6C27FDB4A2000DF4EA /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */; };
 		1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349D27E31FC300DA180C /* AppDelegate.swift */; };
 		1FC834A027E31FC300DA180C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349F27E31FC300DA180C /* SceneDelegate.swift */; };
 		1FC834A227E31FC300DA180C /* DadJokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834A127E31FC300DA180C /* DadJokeViewController.swift */; };
@@ -23,8 +35,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F60600227F5A75300EF2551 /* UIActivityIndicator+Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Visibility.swift"; sourceTree = "<group>"; };
-		1FC8349A27E31FC300DA180C /* DadJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokeRepository.swift; sourceTree = "<group>"; };
+		1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
+		1F5532EC280415CB006B0EC7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		1F5532EF280449DD006B0EC7 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
+		1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Visibility.swift"; sourceTree = "<group>"; };
+		1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DadJokesData.xcdatamodel; sourceTree = "<group>"; };
+		1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUser.swift; sourceTree = "<group>"; };
+		1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataJoke.swift; sourceTree = "<group>"; };
+		1F833D6927FDB48D000DF4EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		1FC8349A27E31FC300DA180C /* Dad Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dad Jokes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC8349D27E31FC300DA180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC8349F27E31FC300DA180C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1FC834A127E31FC300DA180C /* DadJokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokeViewController.swift; sourceTree = "<group>"; };
@@ -51,12 +75,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5532D127FEC824006B0EC7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1F5532DA27FED091006B0EC7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1F5532DB27FED098006B0EC7 /* CoreData */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		1F5532DB27FED098006B0EC7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1F60600727F5CB8800EF2551 /* Entity */,
+				1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1F5532E328002AA6006B0EC7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */,
+				1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		1F5532EE2804482F006B0EC7 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1F5532EF280449DD006B0EC7 /* ViewControllerFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1F5AB50527FDBAD0006B4C84 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1F5532EE2804482F006B0EC7 /* Factory */,
+				1FC834A127E31FC300DA180C /* DadJokeViewController.swift */,
+				1F833D6927FDB48D000DF4EA /* SignInViewController.swift */,
+				1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */,
+				1F5532EC280415CB006B0EC7 /* RootViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1F5AB50627FDBAE6006B4C84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1FC834A327E31FC300DA180C /* Main.storyboard */,
+				1FC834A927E31FC400DA180C /* Assets.xcassets */,
+				1FC834AB27E31FC400DA180C /* LaunchScreen.storyboard */,
+				1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F60600127F5A73500EF2551 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1F60600227F5A75300EF2551 /* UIActivityIndicator+Visibility.swift */,
+				1F5532E328002AA6006B0EC7 /* UIKit */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1F60600727F5CB8800EF2551 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */,
+				1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		1FC8349127E31FC300DA180C = {
@@ -70,7 +168,7 @@
 		1FC8349B27E31FC300DA180C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FC8349A27E31FC300DA180C /* DadJokes.app */,
+				1FC8349A27E31FC300DA180C /* Dad Jokes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,14 +176,16 @@
 		1FC8349C27E31FC300DA180C /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
+				1F5532DA27FED091006B0EC7 /* Database */,
+				1F5532D127FEC824006B0EC7 /* Repository */,
+				1F5AB50527FDBAD0006B4C84 /* Screens */,
 				1F60600127F5A73500EF2551 /* Extensions */,
 				1FC834B427E31FCA00DA180C /* Network */,
+				1F5AB50627FDBAE6006B4C84 /* Resources */,
 				1FC8349D27E31FC300DA180C /* AppDelegate.swift */,
 				1FC8349F27E31FC300DA180C /* SceneDelegate.swift */,
-				1FC834A127E31FC300DA180C /* DadJokeViewController.swift */,
-				1FC834A327E31FC300DA180C /* Main.storyboard */,
-				1FC834A927E31FC400DA180C /* Assets.xcassets */,
-				1FC834AB27E31FC400DA180C /* LaunchScreen.storyboard */,
+				1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */,
+				1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */,
 				1FC834AE27E31FC400DA180C /* Info.plist */,
 			);
 			path = DadJokes;
@@ -122,6 +222,7 @@
 				1FC8349627E31FC300DA180C /* Sources */,
 				1FC8349727E31FC300DA180C /* Frameworks */,
 				1FC8349827E31FC300DA180C /* Resources */,
+				1F60600C27F5CC5700EF2551 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -129,7 +230,7 @@
 			);
 			name = DadJokes;
 			productName = DadJokes;
-			productReference = 1FC8349A27E31FC300DA180C /* DadJokes.app */;
+			productReference = 1FC8349A27E31FC300DA180C /* Dad Jokes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,21 +279,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F60600C27F5CC5700EF2551 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1FC8349627E31FC300DA180C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5532E9280411B5006B0EC7 /* UIViewController+ErrorAlert.swift in Sources */,
+				1F833D6A27FDB48D000DF4EA /* SignInViewController.swift in Sources */,
+				1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */,
 				1FC834BC27E31FE000DA180C /* Endpoint.swift in Sources */,
 				1FC834A227E31FC300DA180C /* DadJokeViewController.swift in Sources */,
+				1F5532F2280449FD006B0EC7 /* ServiceContainer.swift in Sources */,
+				1F833D6C27FDB4A2000DF4EA /* FavoritesTableViewController.swift in Sources */,
 				1FC834BB27E31FE000DA180C /* AsyncRequestService.swift in Sources */,
+				1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */,
 				1FC834C827E3299900DA180C /* DadJoke.swift in Sources */,
+				1F60600927F5CBBE00EF2551 /* CoreDataUser.swift in Sources */,
+				1F5532ED280415CB006B0EC7 /* RootViewController.swift in Sources */,
 				1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */,
 				1FC834B927E31FE000DA180C /* HTTPMethod.swift in Sources */,
 				1FC834A027E31FC300DA180C /* SceneDelegate.swift in Sources */,
+				1F60600B27F5CBC300EF2551 /* CoreDataJoke.swift in Sources */,
 				1FC834C027E3268C00DA180C /* DadJokeAPI.swift in Sources */,
-				1F60600327F5A75300EF2551 /* UIActivityIndicator+Visibility.swift in Sources */,
+				1F5532D527FEC8F5006B0EC7 /* DadJokeRepository.swift in Sources */,
+				1F60600327F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift in Sources */,
 				1FC834C127E3268C00DA180C /* DadJokeRequestService.swift in Sources */,
+				1F5532E5280354F1006B0EC7 /* GlobalFunctions.swift in Sources */,
+				1F5532F0280449DD006B0EC7 /* ViewControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,13 +473,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6KCZLZZNE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DadJokes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -355,7 +490,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexshep.DadJokes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dad Jokes";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -367,13 +503,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6KCZLZZNE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DadJokes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -383,7 +520,8 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexshep.DadJokes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dad Jokes";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,6 +550,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */,
+			);
+			currentVersion = 1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */;
+			path = DadJokesData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1FC8349227E31FC300DA180C /* Project object */;
 }
