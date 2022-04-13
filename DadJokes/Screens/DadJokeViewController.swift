@@ -34,10 +34,6 @@ final class DadJokeViewController: UIViewController {
         loadJoke()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        saveButton.isEnabled = jokeRepository.currentUser != nil
-    }
-
     // MARK: - IBActions
 
     @IBAction private func onNextButton(_ sender: UIButton) {

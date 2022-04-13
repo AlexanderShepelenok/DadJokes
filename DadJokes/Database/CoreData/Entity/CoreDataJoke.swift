@@ -16,9 +16,9 @@ final class CoreDataJoke: NSManagedObject, Identifiable {
     }
 
     @nonobjc
-    public class func fetchRequest(forUser user: CoreDataUser) -> NSFetchRequest<CoreDataJoke> {
+    public class func favoritesFetchRequest() -> NSFetchRequest<CoreDataJoke> {
         let fetchRequest = fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "ANY users == %@", user)
+        fetchRequest.predicate = NSPredicate(format: "inFavorites == YES")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "addedOn", ascending: false)]
         return fetchRequest
     }
@@ -26,17 +26,5 @@ final class CoreDataJoke: NSManagedObject, Identifiable {
     @NSManaged public var id: String
     @NSManaged public var text: String
     @NSManaged public var addedOn: Date
-    @NSManaged public var users: NSSet?
-
-    @objc(addUsersObject:)
-    @NSManaged public func addToUsers(_ value: CoreDataUser)
-
-    @objc(removeUsersObject:)
-    @NSManaged public func removeFromUsers(_ value: CoreDataUser)
-
-    @objc(addUsers:)
-    @NSManaged public func addToUsers(_ values: NSSet)
-
-    @objc(removeUsers:)
-    @NSManaged public func removeFromUsers(_ values: NSSet)
+    @NSManaged public var inFavorites: Bool
 }

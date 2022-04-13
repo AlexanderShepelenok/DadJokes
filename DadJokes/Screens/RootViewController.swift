@@ -40,8 +40,8 @@ final class RootViewController: UIViewController, UIViewControllerRestoration {
     }
 
     @IBSegueAction
-    private func createSignInViewController(_ coder: NSCoder) -> SignInViewController? {
-        viewControllerFactory.createSignInViewController(coder)
+    private func createFavoritesViewController(_ coder: NSCoder) -> FavoritesTableViewController? {
+        viewControllerFactory.createFavoritesViewController(coder)
     }
 
 }

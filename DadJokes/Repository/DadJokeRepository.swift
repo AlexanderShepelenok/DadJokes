@@ -12,8 +12,6 @@ final class DadJokeRepository {
     private let requestService: DadJokeRequestService
     private let coreData: CoreDataService
 
-    var currentUser: CoreDataUser?
-
     init(requestService: DadJokeRequestService, storage: CoreDataService) {
         self.requestService = requestService
         self.coreData = storage
@@ -37,19 +35,7 @@ final class DadJokeRepository {
         await coreData.jokesCount()
     }
 
-    func authenticateUser(withName name: String) async throws {
-        let currentUser = try await coreData.user(withName: name)
-        self.currentUser = currentUser
-    }
-
-    func logoutCurrentUser() {
-        self.currentUser = nil
-    }
-
     func addToFavorites(joke: CoreDataJoke) {
-        guard let currentUser = currentUser else {
-            fatalError("Cannot add a joke for empty user!")
-        }
-        coreData.addJoke(joke, toUser: currentUser)
+        coreData.addToFavorites(joke)
     }
 }

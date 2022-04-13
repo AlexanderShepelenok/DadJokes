@@ -16,9 +16,7 @@
 		1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */; };
 		1F60600327F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */; };
 		1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */; };
-		1F60600927F5CBBE00EF2551 /* CoreDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */; };
 		1F60600B27F5CBC300EF2551 /* CoreDataJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */; };
-		1F833D6A27FDB48D000DF4EA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833D6927FDB48D000DF4EA /* SignInViewController.swift */; };
 		1F833D6C27FDB4A2000DF4EA /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */; };
 		1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349D27E31FC300DA180C /* AppDelegate.swift */; };
 		1FC834A027E31FC300DA180C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349F27E31FC300DA180C /* SceneDelegate.swift */; };
@@ -35,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DadJokesData 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokeRepository.swift; sourceTree = "<group>"; };
 		1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
@@ -44,9 +43,7 @@
 		1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Visibility.swift"; sourceTree = "<group>"; };
 		1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DadJokesData.xcdatamodel; sourceTree = "<group>"; };
-		1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUser.swift; sourceTree = "<group>"; };
 		1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataJoke.swift; sourceTree = "<group>"; };
-		1F833D6927FDB48D000DF4EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1FC8349A27E31FC300DA180C /* Dad Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dad Jokes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC8349D27E31FC300DA180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +119,6 @@
 			children = (
 				1F5532EE2804482F006B0EC7 /* Factory */,
 				1FC834A127E31FC300DA180C /* DadJokeViewController.swift */,
-				1F833D6927FDB48D000DF4EA /* SignInViewController.swift */,
 				1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */,
 				1F5532EC280415CB006B0EC7 /* RootViewController.swift */,
 			);
@@ -151,7 +147,6 @@
 		1F60600727F5CB8800EF2551 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				1F60600827F5CBBE00EF2551 /* CoreDataUser.swift */,
 				1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */,
 			);
 			path = Entity;
@@ -306,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F5532E9280411B5006B0EC7 /* UIViewController+ErrorAlert.swift in Sources */,
-				1F833D6A27FDB48D000DF4EA /* SignInViewController.swift in Sources */,
 				1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */,
 				1FC834BC27E31FE000DA180C /* Endpoint.swift in Sources */,
 				1FC834A227E31FC300DA180C /* DadJokeViewController.swift in Sources */,
@@ -315,7 +309,6 @@
 				1FC834BB27E31FE000DA180C /* AsyncRequestService.swift in Sources */,
 				1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */,
 				1FC834C827E3299900DA180C /* DadJoke.swift in Sources */,
-				1F60600927F5CBBE00EF2551 /* CoreDataUser.swift in Sources */,
 				1F5532ED280415CB006B0EC7 /* RootViewController.swift in Sources */,
 				1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */,
 				1FC834B927E31FE000DA180C /* HTTPMethod.swift in Sources */,
@@ -555,9 +548,10 @@
 		1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */,
 				1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */,
 			);
-			currentVersion = 1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */;
+			currentVersion = 1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */;
 			path = DadJokesData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -31,18 +31,9 @@ final class ViewControllerFactory {
         DadJokeViewController(coder: coder, dadJokeRepository: dadJokeRepository)
     }
 
-    func createSignInViewController(_ coder: NSCoder) -> SignInViewController? {
-        SignInViewController(coder: coder,
-                             viewControllerFactory: self,
-                             dadJokeRepository: dadJokeRepository)
-    }
-
     func createFavoritesViewController(_ coder: NSCoder) -> FavoritesTableViewController? {
-        guard let user = dadJokeRepository.currentUser else {
-            fatalError("Cannot create favorites view controller for empty user")
-        }
         let coreDataService = serviceContainer.coreDataService
-        let fetchedResultsController = coreDataService.resultsController(forUser: user)
+        let fetchedResultsController = coreDataService.createFavoritesFetchedResultsController()
         return FavoritesTableViewController(coder: coder,
                                             fetchedResultsController: fetchedResultsController)
     }
