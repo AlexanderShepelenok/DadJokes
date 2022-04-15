@@ -10,12 +10,6 @@ import CoreData
 
 final class FavoritesTableViewController: UITableViewController {
 
-    private enum SegueIdentifiers {
-        static let unwind = "Unwind"
-    }
-
-    @IBOutlet private var logoutButton: UIBarButtonItem!
-
     let fetchedResultsController: NSFetchedResultsController<CoreDataJoke>
 
     init?(coder: NSCoder, fetchedResultsController: NSFetchedResultsController<CoreDataJoke>) {
@@ -36,19 +30,11 @@ final class FavoritesTableViewController: UITableViewController {
         } catch {
             showErrorAlert(withMessage: "Unable to perform fetch from the database")
         }
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-
-    // MARK: - IBActions
-
-    @IBAction private func logoutButtonClick(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: SegueIdentifiers.unwind, sender: self)
     }
 
     // MARK: - Table view data source

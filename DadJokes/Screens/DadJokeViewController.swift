@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import CoreGraphics
 
 final class DadJokeViewController: UIViewController {
 
     @IBOutlet private var jokeLabel: UILabel!
     @IBOutlet private var nextButton: UIButton!
     @IBOutlet private var saveButton: UIButton!
+    @IBOutlet private var shareButton: UIButton!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private var databaseJokesLabel: UILabel!
 
     private var currentJoke: CoreDataJoke?
     private var currentTask: Task<(), Never>?
@@ -44,6 +45,10 @@ final class DadJokeViewController: UIViewController {
         addToFavorites()
     }
 
+    @IBAction private func onShareButton(_ sender: UIButton) {
+        share()
+    }
+
     // MARK: - Private methods
 
     private func loadJoke() {
@@ -57,7 +62,6 @@ final class DadJokeViewController: UIViewController {
             do {
                 let joke = try await jokeRepository.randomJoke()
                 await showJoke(joke.text)
-                await updateDatabaseJokesLabel()
                 self.currentJoke = joke
             } catch {
                 DispatchQueue.main.async {
@@ -74,6 +78,27 @@ final class DadJokeViewController: UIViewController {
         jokeRepository.addToFavorites(joke: currentJoke)
     }
 
+    private func calculateShareCaptureRect() -> CGRect {
+        let offset: CGFloat = 20.0
+        let x = jokeLabel.frame.origin.x - offset
+        let y = offset
+        let width = jokeLabel.frame.width + offset * 2
+        let height = jokeLabel.frame.maxY
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
+
+    private func share() {
+        let captureRect = calculateShareCaptureRect()
+        let renderer = UIGraphicsImageRenderer(bounds: captureRect)
+        let image = renderer.image { rendererContext in
+            view.layer.render(in: rendererContext.cgContext)
+        }
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(activityViewController, animated: true)
+    }
+
+    // MARK: - Private MainActors
+
     @MainActor
     private func showJoke(_ joke: String) async {
         self.jokeLabel.alpha = 0.0
@@ -84,9 +109,4 @@ final class DadJokeViewController: UIViewController {
         }
     }
 
-    @MainActor
-    private func updateDatabaseJokesLabel() async {
-        let count = await jokeRepository.databaseJokesCount()
-        databaseJokesLabel.text = "Database jokes: \(count)"
-    }
 }

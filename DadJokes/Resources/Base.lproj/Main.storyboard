@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fL-bg-p2N">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -34,11 +34,25 @@
                                 <rect key="frame" x="210" y="92" width="20" height="20"/>
                                 <color key="color" systemColor="systemOrangeColor"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ojI-e0-CaE">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ojI-e0-CaE">
                                 <rect key="frame" x="77" y="743" width="260" height="50"/>
                                 <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-Ks-oMg">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Vva-Ks-oMg" secondAttribute="height" multiplier="1:1" id="non-0D-iwd"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.up" catalog="system">
+                                            <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZM-JK-Jqe"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-JC-vEx">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                        <rect key="frame" x="70" y="0.0" width="75" height="50"/>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Save">
@@ -50,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR6-vG-Y8B">
-                                        <rect key="frame" x="140" y="0.0" width="120" height="50"/>
+                                        <rect key="frame" x="165" y="0.0" width="95" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TLH-Dq-aos"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="q6Q-cF-eV9"/>
@@ -59,6 +73,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Next">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                             <color key="baseBackgroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -70,12 +85,6 @@
                                     <constraint firstAttribute="width" constant="260" id="ukN-eM-1JH"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8T-cK-3ev">
-                                <rect key="frame" x="404" y="803" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,22 +96,19 @@
                             <constraint firstItem="Lxj-e4-cKK" firstAttribute="leading" secondItem="O4g-vu-nFw" secondAttribute="leading" constant="63" id="IrA-0j-loA"/>
                             <constraint firstItem="ojI-e0-CaE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0E-lz-UjE"/>
                             <constraint firstItem="O4g-vu-nFw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NK4-B9-OxG"/>
-                            <constraint firstItem="q8T-cK-3ev" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PA7-2z-aiU"/>
-                            <constraint firstItem="q8T-cK-3ev" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="bfl-yp-am8"/>
                             <constraint firstItem="Lxj-e4-cKK" firstAttribute="top" secondItem="O4g-vu-nFw" secondAttribute="top" constant="28" id="ece-uF-Lt1"/>
-                            <constraint firstItem="q8T-cK-3ev" firstAttribute="top" secondItem="ojI-e0-CaE" secondAttribute="bottom" constant="10" id="gEf-cb-SRd"/>
                             <constraint firstItem="Lrh-hd-1ff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="i7c-Xa-zjD"/>
-                            <constraint firstItem="q8T-cK-3ev" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="mcK-73-bKl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ojI-e0-CaE" secondAttribute="bottom" constant="20" id="m3F-GJ-Uch"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dad Jokes" image="smile-tab-bar" landscapeImage="smile-tab-bar" id="ulD-Tj-Tie"/>
                     <navigationItem key="navigationItem" id="4Nn-L2-Nm2"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Lxj-e4-cKK" id="gSD-hZ-wBd"/>
-                        <outlet property="databaseJokesLabel" destination="q8T-cK-3ev" id="n4m-WQ-kEL"/>
                         <outlet property="jokeLabel" destination="Lrh-hd-1ff" id="vaK-xG-7B4"/>
                         <outlet property="nextButton" destination="QR6-vG-Y8B" id="cr6-fe-hVl"/>
                         <outlet property="saveButton" destination="5Hd-JC-vEx" id="1YP-Wp-l40"/>
+                        <outlet property="shareButton" destination="Vva-Ks-oMg" id="tEm-yu-D68"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -143,22 +149,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" id="WZg-nZ-kht"/>
-                    <navigationItem key="navigationItem" title="Favorites" id="wMn-xe-5ls">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="rectangle.portrait.and.arrow.right" catalog="system" id="1WW-7B-xza">
-                            <connections>
-                                <action selector="logoutButtonClick:" destination="5g4-U9-c0U" id="B1E-28-htK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Favorites" id="wMn-xe-5ls"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="logoutButton" destination="1WW-7B-xza" id="Hy7-wM-7Ss"/>
-                        <segue destination="w0b-0U-0vM" kind="unwind" identifier="Unwind" unwindAction="unwind:" id="vev-mL-DDt"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bC-pv-6j4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="w0b-0U-0vM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1807" y="331"/>
         </scene>
@@ -232,8 +227,8 @@
     </scenes>
     <resources>
         <image name="man-drinking-coffee" width="671" height="800"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="smile-tab-bar" width="25" height="25"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -251,6 +246,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

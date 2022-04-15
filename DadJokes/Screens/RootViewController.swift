@@ -28,6 +28,7 @@ final class RootViewController: UIViewController, UIViewControllerRestoration {
         self.dadJokeRepository = dadJokeRepository
         super.init(coder: coder)
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

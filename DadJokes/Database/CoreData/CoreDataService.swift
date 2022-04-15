@@ -101,9 +101,7 @@ final class CoreDataService {
 
     func objectForDisplay<T>(withID objectID: NSManagedObjectID) async throws -> T {
         let viewContext = persistentContainer.viewContext
-//        logCurrentThread()
         return try await viewContext.perform {
-//            logCurrentThread()
             guard let object = viewContext.object(with: objectID) as? T else {
                 throw OperationError.fetchError()
             }
