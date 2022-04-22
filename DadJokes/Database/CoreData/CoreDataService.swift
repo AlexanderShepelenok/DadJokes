@@ -44,10 +44,8 @@ final class CoreDataService {
 
     public func saveJokeInBackground(joke: DadJoke) async throws -> NSManagedObjectID {
         let backgroundContext = persistentContainer.newBackgroundContext()
-        backgroundContext.mergePolicy = NSMergePolicy(merge: .overwriteMergePolicyType)
-        logCurrentThread()
+        backgroundContext.mergePolicy = NSMergePolicy(merge: .errorMergePolicyType)
         return try await backgroundContext.perform {
-            logCurrentThread()
             let jokeEntity = CoreDataJoke.entity()
             do {
                 let jokeObject = CoreDataJoke(entity: jokeEntity, insertInto: backgroundContext)
@@ -56,11 +54,18 @@ final class CoreDataService {
                 jokeObject.addedOn = Date()
 
                 // Should throw an error in case of duplicate
-                // Update merge policy to not throw an error
                 try backgroundContext.save()
 
                 return jokeObject.objectID
             } catch {
+                // Error may be thrown in case we already have this joke in the database
+                // Try to return database object ID
+                let databaseError = error as NSError
+                if let conflictList = databaseError.userInfo["conflictList"] as? [NSObject],
+                   let conflict = conflictList.first as? NSConstraintConflict,
+                   let databaseObject = conflict.databaseObject {
+                    return databaseObject.objectID
+                }
                 throw OperationError.insertError
             }
         }
@@ -68,9 +73,7 @@ final class CoreDataService {
 
     public func fetchRandomJokeForDisplay() async throws -> CoreDataJoke {
         let viewContext = persistentContainer.viewContext
-        logCurrentThread()
         return try await viewContext.perform {
-            logCurrentThread()
             let fetchRequest = CoreDataJoke.fetchRequest()
             do {
                 let totalResults = try viewContext.count(for: fetchRequest)
