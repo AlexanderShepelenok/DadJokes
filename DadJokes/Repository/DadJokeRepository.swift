@@ -35,7 +35,11 @@ final class DadJokeRepository {
         await coreData.jokesCount()
     }
 
-    func addToFavorites(joke: CoreDataJoke) {
-        coreData.addToFavorites(joke)
+    func toggleFavorite(forJoke joke: CoreDataJoke) async {
+        await coreData.setInFavorites(!joke.inFavorites, joke: joke)
+    }
+
+    func removeFromFavorites(_ joke: CoreDataJoke) async {
+        await coreData.setInFavorites(false, joke: joke)
     }
 }

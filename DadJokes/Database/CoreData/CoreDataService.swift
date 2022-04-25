@@ -125,10 +125,10 @@ final class CoreDataService {
         return fetchedResultsController
     }
 
-    public func addToFavorites(_ joke: CoreDataJoke) {
+    public func setInFavorites(_ inFavorites: Bool, joke: CoreDataJoke) async {
         let viewContext = persistentContainer.viewContext
-        viewContext.perform {
-            joke.inFavorites = true
+        await viewContext.perform {
+            joke.inFavorites = inFavorites
             try? viewContext.save()
         }
     }

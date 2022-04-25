@@ -35,6 +35,7 @@ final class ViewControllerFactory {
         let coreDataService = serviceContainer.coreDataService
         let fetchedResultsController = coreDataService.createFavoritesFetchedResultsController()
         return FavoritesTableViewController(coder: coder,
-                                            fetchedResultsController: fetchedResultsController)
+                                            fetchedResultsController: fetchedResultsController,
+                                            jokeRepository: dadJokeRepository)
     }
 }

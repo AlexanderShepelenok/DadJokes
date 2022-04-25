@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,20 +50,20 @@
                                             <action selector="onShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZM-JK-Jqe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-JC-vEx">
-                                        <rect key="frame" x="70" y="0.0" width="75" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-JC-vEx">
+                                        <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5Hd-JC-vEx" secondAttribute="height" multiplier="1:1" id="htz-Sm-yCg"/>
+                                        </constraints>
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Save">
-                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                        </buttonConfiguration>
+                                        <buttonConfiguration key="configuration" style="filled" image="star" catalog="system"/>
                                         <connections>
-                                            <action selector="onSaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5Q-dh-nbG"/>
+                                            <action selector="onToggleFavoriteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OKS-fr-vs7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR6-vG-Y8B">
-                                        <rect key="frame" x="165" y="0.0" width="95" height="50"/>
+                                        <rect key="frame" x="140" y="0.0" width="120" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TLH-Dq-aos"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="q6Q-cF-eV9"/>
@@ -107,8 +106,8 @@
                         <outlet property="activityIndicator" destination="Lxj-e4-cKK" id="gSD-hZ-wBd"/>
                         <outlet property="jokeLabel" destination="Lrh-hd-1ff" id="vaK-xG-7B4"/>
                         <outlet property="nextButton" destination="QR6-vG-Y8B" id="cr6-fe-hVl"/>
-                        <outlet property="saveButton" destination="5Hd-JC-vEx" id="1YP-Wp-l40"/>
                         <outlet property="shareButton" destination="Vva-Ks-oMg" id="tEm-yu-D68"/>
+                        <outlet property="toggleFavoriteButton" destination="5Hd-JC-vEx" id="zs5-Om-4D4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -129,7 +128,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="FavoritesTableViewController" title="Favorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5g4-U9-c0U" customClass="FavoritesTableViewController" customModule="Dad_Jokes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tTk-FH-eJK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="separatorColor" systemColor="systemOrangeColor"/>
@@ -148,10 +147,11 @@
                             <outlet property="delegate" destination="5g4-U9-c0U" id="nZG-Rc-gni"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" id="WZg-nZ-kht"/>
                     <navigationItem key="navigationItem" title="Favorites" id="wMn-xe-5ls"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bC-pv-6j4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,9 +164,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="FWW-kC-lgg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <color key="tintColor" name="AccentColor"/>
-                        <color key="barTintColor" systemColor="systemPurpleColor"/>
                         <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
@@ -229,23 +226,15 @@
         <image name="man-drinking-coffee" width="671" height="800"/>
         <image name="smile-tab-bar" width="25" height="25"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

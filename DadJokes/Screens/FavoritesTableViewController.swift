@@ -11,9 +11,13 @@ import CoreData
 final class FavoritesTableViewController: UITableViewController {
 
     let fetchedResultsController: NSFetchedResultsController<CoreDataJoke>
+    let jokeRepository: DadJokeRepository
 
-    init?(coder: NSCoder, fetchedResultsController: NSFetchedResultsController<CoreDataJoke>) {
+    init?(coder: NSCoder,
+          fetchedResultsController: NSFetchedResultsController<CoreDataJoke>,
+          jokeRepository: DadJokeRepository) {
         self.fetchedResultsController = fetchedResultsController
+        self.jokeRepository = jokeRepository
         super.init(coder: coder)
     }
 
@@ -62,34 +66,32 @@ final class FavoritesTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView,
-     canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+                            canEditRowAt indexPath: IndexPath) -> Bool { true }
 
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView,
-     commit editingStyle: UITableViewCell.EditingStyle,
-     forRowAt indexPath: IndexPath) {
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle { .delete }
+
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class,
-     insert it into the array, and add a new row to the table view
-        }    
+            let joke = fetchedResultsController.object(at: indexPath)
+            Task {
+                await jokeRepository.removeFromFavorites(joke)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
-    */
 
 }
 
 extension FavoritesTableViewController: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChangeContentWith diff: CollectionDifference<NSManagedObjectID>) {
+        // Reload only on insertions. Removal handled manually.
+        if !diff.insertions.isEmpty {
+            tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
     }
 }

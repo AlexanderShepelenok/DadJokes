@@ -12,11 +12,15 @@ final class DadJokeViewController: UIViewController {
 
     @IBOutlet private var jokeLabel: UILabel!
     @IBOutlet private var nextButton: UIButton!
-    @IBOutlet private var saveButton: UIButton!
+    @IBOutlet private var toggleFavoriteButton: UIButton!
     @IBOutlet private var shareButton: UIButton!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
 
-    private var currentJoke: CoreDataJoke?
+    private var currentJoke: CoreDataJoke? {
+        didSet {
+            refreshFavoriteState()
+        }
+    }
     private var currentTask: Task<(), Never>?
 
     init?(coder: NSCoder, dadJokeRepository: DadJokeRepository) {
@@ -33,6 +37,12 @@ final class DadJokeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadJoke()
+        configureToggleFavoriteButton()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshFavoriteState()
     }
 
     // MARK: - IBActions
@@ -41,8 +51,8 @@ final class DadJokeViewController: UIViewController {
         loadJoke()
     }
 
-    @IBAction private func onSaveButton(_ sender: UIButton) {
-        addToFavorites()
+    @IBAction private func onToggleFavoriteButton(_ sender: UIButton) {
+        Task { await toggleFavorite() }
     }
 
     @IBAction private func onShareButton(_ sender: UIButton) {
@@ -64,18 +74,17 @@ final class DadJokeViewController: UIViewController {
                 await showJoke(joke.text)
                 self.currentJoke = joke
             } catch {
-                DispatchQueue.main.async {
-                    self.showErrorAlert(withMessage: error.localizedDescription)
-                }
+                self.showErrorAlert(withMessage: error.localizedDescription)
             }
             DispatchQueue.main.async { self.activityIndicator.hideAndStop() }
             self.currentTask = nil
         }
     }
 
-    private func addToFavorites() {
+    private func toggleFavorite() async {
         guard let currentJoke = currentJoke else { return }
-        jokeRepository.addToFavorites(joke: currentJoke)
+        await jokeRepository.toggleFavorite(forJoke: currentJoke)
+        self.toggleFavoriteButton.isSelected = currentJoke.inFavorites
     }
 
     private func calculateShareCaptureRect() -> CGRect {
@@ -95,6 +104,15 @@ final class DadJokeViewController: UIViewController {
         }
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         self.present(activityViewController, animated: true)
+    }
+
+    private func configureToggleFavoriteButton() {
+        toggleFavoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        toggleFavoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+    }
+
+    private func refreshFavoriteState() {
+        self.toggleFavoriteButton.isSelected = currentJoke?.inFavorites ?? false
     }
 
     // MARK: - Private MainActors
