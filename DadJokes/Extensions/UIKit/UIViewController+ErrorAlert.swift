@@ -1,6 +1,6 @@
 //
 //  UIViewController+ErrorAlert.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 11/04/22.
 //

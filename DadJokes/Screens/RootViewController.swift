@@ -1,17 +1,20 @@
 //
 //  RootViewController.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 11/04/22.
 //
 
 import UIKit
+import CoreLayer
 
 final class RootViewController: UIViewController, UIViewControllerRestoration {
 
     static func viewController(withRestorationIdentifierPath identifierComponents: [String],
                                coder: NSCoder) -> UIViewController? {
-        ViewControllerFactory(serviceContainer: ServiceContainer()).createRootViewController(coder)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+              let serviceContainer = appDelegate.serviceContainer else { return nil }
+        return ViewControllerFactory(serviceContainer: serviceContainer).createRootViewController(coder)
     }
 
     private enum CodingKeys {
@@ -19,13 +22,13 @@ final class RootViewController: UIViewController, UIViewControllerRestoration {
     }
 
     private let viewControllerFactory: ViewControllerFactory
-    private let dadJokeRepository: DadJokeRepository
+    private let jokeRepository: JokeRepository
 
     init?(coder: NSCoder,
-          dadJokeRepository: DadJokeRepository,
+          jokeRepository: JokeRepository,
           viewControllerFactory: ViewControllerFactory) {
         self.viewControllerFactory = viewControllerFactory
-        self.dadJokeRepository = dadJokeRepository
+        self.jokeRepository = jokeRepository
         super.init(coder: coder)
     }
 
@@ -44,5 +47,4 @@ final class RootViewController: UIViewController, UIViewControllerRestoration {
     private func createFavoritesViewController(_ coder: NSCoder) -> FavoritesTableViewController? {
         viewControllerFactory.createFavoritesViewController(coder)
     }
-
 }

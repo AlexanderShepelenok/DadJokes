@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 17/03/22.
 //

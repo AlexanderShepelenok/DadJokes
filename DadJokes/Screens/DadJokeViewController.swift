@@ -1,12 +1,13 @@
 //
 //  ViewController.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 17/03/22.
 //
 
 import UIKit
 import CoreGraphics
+import CoreLayer
 
 final class DadJokeViewController: UIViewController {
 
@@ -16,23 +17,27 @@ final class DadJokeViewController: UIViewController {
     @IBOutlet private var shareButton: UIButton!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
 
-    private var currentJoke: CoreDataJoke? {
+    private let jokeRepository: JokeRepository
+    private let favoritesManager: FavoritesManager
+
+    private var currentTask: Task<(), Never>?
+    private var currentJoke: DisplayableJoke? {
         didSet {
             refreshFavoriteState()
         }
     }
-    private var currentTask: Task<(), Never>?
 
-    init?(coder: NSCoder, dadJokeRepository: DadJokeRepository) {
-        self.jokeRepository = dadJokeRepository
+    init?(coder: NSCoder,
+          jokeRepository: JokeRepository,
+          favoritesManager: FavoritesManager) {
+        self.jokeRepository = jokeRepository
+        self.favoritesManager = favoritesManager
         super.init(coder: coder)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    private let jokeRepository: DadJokeRepository
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,14 +81,14 @@ final class DadJokeViewController: UIViewController {
             } catch {
                 self.showErrorAlert(withMessage: error.localizedDescription)
             }
-            DispatchQueue.main.async { self.activityIndicator.hideAndStop() }
+            await MainActor.run { self.activityIndicator.hideAndStop() }
             self.currentTask = nil
         }
     }
 
     private func toggleFavorite() async {
         guard let currentJoke = currentJoke else { return }
-        await jokeRepository.toggleFavorite(forJoke: currentJoke)
+        await favoritesManager.setFavorite(!currentJoke.inFavorites, joke: currentJoke)
         self.toggleFavoriteButton.isSelected = currentJoke.inFavorites
     }
 
@@ -115,9 +120,6 @@ final class DadJokeViewController: UIViewController {
         self.toggleFavoriteButton.isSelected = currentJoke?.inFavorites ?? false
     }
 
-    // MARK: - Private MainActors
-
-    @MainActor
     private func showJoke(_ joke: String) async {
         self.jokeLabel.alpha = 0.0
         self.jokeLabel.text = joke

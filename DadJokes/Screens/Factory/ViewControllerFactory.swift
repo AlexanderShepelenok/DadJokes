@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import CoreData
+import CoreLayer
 
 final class ViewControllerFactory {
 
     let serviceContainer: ServiceContainer
 
-    lazy var dadJokeRepository: DadJokeRepository = {
-        DadJokeRepository(requestService: serviceContainer.requestService,
-                          storage: serviceContainer.coreDataService)
+    lazy var jokeRepository: JokeRepository = {
+        JokeRepository(networkService: serviceContainer.networkService,
+                       databaseService: serviceContainer.databaseService)
     }()
 
     init(serviceContainer: ServiceContainer) {
@@ -23,19 +23,21 @@ final class ViewControllerFactory {
 
     func createRootViewController(_ coder: NSCoder) -> RootViewController? {
         RootViewController(coder: coder,
-                           dadJokeRepository: dadJokeRepository,
+                           jokeRepository: jokeRepository,
                            viewControllerFactory: self)
     }
 
     func createDadJokeViewController(_ coder: NSCoder) -> DadJokeViewController? {
-        DadJokeViewController(coder: coder, dadJokeRepository: dadJokeRepository)
+        DadJokeViewController(coder: coder,
+                              jokeRepository: jokeRepository,
+                              favoritesManager: serviceContainer.favoritesManager)
     }
 
     func createFavoritesViewController(_ coder: NSCoder) -> FavoritesTableViewController? {
-        let coreDataService = serviceContainer.coreDataService
-        let fetchedResultsController = coreDataService.createFavoritesFetchedResultsController()
+        let creator = serviceContainer.favoritesProviderCreator
+        let provider = creator.createFavoritesProvider()
         return FavoritesTableViewController(coder: coder,
-                                            fetchedResultsController: fetchedResultsController,
-                                            jokeRepository: dadJokeRepository)
+                                            favoritesProvider: provider,
+                                            favoritesManager: serviceContainer.favoritesManager)
     }
 }

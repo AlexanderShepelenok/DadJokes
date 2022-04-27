@@ -1,6 +1,6 @@
 //
 //  UIActivityIndicator+Visibility.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 31/03/22.
 //

@@ -1,23 +1,23 @@
 //
 //  FavoritesTableViewController.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 06/04/22.
 //
 
 import UIKit
-import CoreData
+import CoreLayer
 
 final class FavoritesTableViewController: UITableViewController {
 
-    let fetchedResultsController: NSFetchedResultsController<CoreDataJoke>
-    let jokeRepository: DadJokeRepository
+    let favoritesProvider: FavoritesProvider
+    let favoritesManager: FavoritesManager
 
     init?(coder: NSCoder,
-          fetchedResultsController: NSFetchedResultsController<CoreDataJoke>,
-          jokeRepository: DadJokeRepository) {
-        self.fetchedResultsController = fetchedResultsController
-        self.jokeRepository = jokeRepository
+          favoritesProvider: FavoritesProvider,
+          favoritesManager: FavoritesManager) {
+        self.favoritesProvider = favoritesProvider
+        self.favoritesManager = favoritesManager
         super.init(coder: coder)
     }
 
@@ -28,12 +28,7 @@ final class FavoritesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        fetchedResultsController.delegate = self
-        do {
-        try fetchedResultsController.performFetch()
-        } catch {
-            showErrorAlert(withMessage: "Unable to perform fetch from the database")
-        }
+        favoritesProvider.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -44,14 +39,11 @@ final class FavoritesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        fetchedResultsController.sections?.count ?? 0
+        favoritesProvider.numberOfSections()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sectionInfo = fetchedResultsController.sections?[section] else {
-            return 0
-        }
-        return sectionInfo.numberOfObjects
+        favoritesProvider.numberOfItems(inSection: section)
     }
 
     override func tableView(_ tableView: UITableView,
@@ -59,7 +51,7 @@ final class FavoritesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell",
                                                  for: indexPath)
 
-        let joke = fetchedResultsController.object(at: indexPath)
+        let joke = favoritesProvider.item(at: indexPath)
         var config = cell.defaultContentConfiguration()
         config.text = joke.text
         cell.contentConfiguration = config
@@ -76,21 +68,23 @@ final class FavoritesTableViewController: UITableViewController {
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let joke = fetchedResultsController.object(at: indexPath)
+            let joke = favoritesProvider.item(at: indexPath)
             Task {
-                await jokeRepository.removeFromFavorites(joke)
+                await favoritesManager.setFavorite(false, joke: joke)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
     }
-
 }
 
-extension FavoritesTableViewController: NSFetchedResultsControllerDelegate {
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChangeContentWith diff: CollectionDifference<NSManagedObjectID>) {
-        // Reload only on insertions. Removal handled manually.
-        if !diff.insertions.isEmpty {
+extension FavoritesTableViewController: FavoritesProviderDelegate {
+
+    func fetchingFailed(error: Error) {
+        showErrorAlert(withMessage: "Unable to perform fetch from the database")
+    }
+
+    func favoritesUpdated(insertionsCount: Int, removalsCount: Int) {
+        if insertionsCount > 0 {
             tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
     }

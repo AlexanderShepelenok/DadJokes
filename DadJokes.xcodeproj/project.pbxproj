@@ -7,16 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F5532D527FEC8F5006B0EC7 /* DadJokeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */; };
 		1F5532E5280354F1006B0EC7 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */; };
 		1F5532E9280411B5006B0EC7 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */; };
 		1F5532ED280415CB006B0EC7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532EC280415CB006B0EC7 /* RootViewController.swift */; };
 		1F5532F0280449DD006B0EC7 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532EF280449DD006B0EC7 /* ViewControllerFactory.swift */; };
-		1F5532F2280449FD006B0EC7 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */; };
-		1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */; };
 		1F60600327F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */; };
-		1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */; };
-		1F60600B27F5CBC300EF2551 /* CoreDataJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */; };
 		1F833D6C27FDB4A2000DF4EA /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */; };
 		1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349D27E31FC300DA180C /* AppDelegate.swift */; };
 		1FC834A027E31FC300DA180C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8349F27E31FC300DA180C /* SceneDelegate.swift */; };
@@ -24,26 +19,18 @@
 		1FC834A527E31FC300DA180C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC834A327E31FC300DA180C /* Main.storyboard */; };
 		1FC834AA27E31FC400DA180C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC834A927E31FC400DA180C /* Assets.xcassets */; };
 		1FC834AD27E31FC400DA180C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC834AB27E31FC400DA180C /* LaunchScreen.storyboard */; };
-		1FC834B927E31FE000DA180C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834B527E31FE000DA180C /* HTTPMethod.swift */; };
-		1FC834BB27E31FE000DA180C /* AsyncRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834B727E31FE000DA180C /* AsyncRequestService.swift */; };
-		1FC834BC27E31FE000DA180C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834B827E31FE000DA180C /* Endpoint.swift */; };
-		1FC834C027E3268C00DA180C /* DadJokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834BE27E3268C00DA180C /* DadJokeAPI.swift */; };
-		1FC834C127E3268C00DA180C /* DadJokeRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834BF27E3268C00DA180C /* DadJokeRequestService.swift */; };
-		1FC834C827E3299900DA180C /* DadJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC834C727E3299900DA180C /* DadJoke.swift */; };
+		A5B307DD2818229D00210C2E /* CoreLayer in Frameworks */ = {isa = PBXBuildFile; productRef = A5B307DC2818229D00210C2E /* CoreLayer */; };
+		A5B307DF2818229D00210C2E /* DatabaseLayer in Frameworks */ = {isa = PBXBuildFile; productRef = A5B307DE2818229D00210C2E /* DatabaseLayer */; };
+		A5B307E12818229D00210C2E /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = A5B307E02818229D00210C2E /* NetworkLayer */; };
+		A5B307E32818282D00210C2E /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B307E22818282D00210C2E /* ServiceContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DadJokesData 1.1.xcdatamodel"; sourceTree = "<group>"; };
-		1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokeRepository.swift; sourceTree = "<group>"; };
 		1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		1F5532E8280411B5006B0EC7 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
 		1F5532EC280415CB006B0EC7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1F5532EF280449DD006B0EC7 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
-		1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		1F60600227F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Visibility.swift"; sourceTree = "<group>"; };
-		1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DadJokesData.xcdatamodel; sourceTree = "<group>"; };
-		1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataJoke.swift; sourceTree = "<group>"; };
 		1F833D6B27FDB4A2000DF4EA /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1FC8349A27E31FC300DA180C /* Dad Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dad Jokes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC8349D27E31FC300DA180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,12 +40,10 @@
 		1FC834A927E31FC400DA180C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FC834AC27E31FC400DA180C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FC834AE27E31FC400DA180C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FC834B527E31FE000DA180C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		1FC834B727E31FE000DA180C /* AsyncRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncRequestService.swift; sourceTree = "<group>"; };
-		1FC834B827E31FE000DA180C /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		1FC834BE27E3268C00DA180C /* DadJokeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DadJokeAPI.swift; sourceTree = "<group>"; };
-		1FC834BF27E3268C00DA180C /* DadJokeRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DadJokeRequestService.swift; sourceTree = "<group>"; };
-		1FC834C727E3299900DA180C /* DadJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJoke.swift; sourceTree = "<group>"; };
+		A5B307E22818282D00210C2E /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
+		A5CFBEE52817F7C400CD8FC9 /* CoreLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreLayer; sourceTree = "<group>"; };
+		A5CFBEEC281806AC00CD8FC9 /* DatabaseLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DatabaseLayer; sourceTree = "<group>"; };
+		A5CFBEED28180CDC00CD8FC9 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,37 +51,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B307E12818229D00210C2E /* NetworkLayer in Frameworks */,
+				A5B307DD2818229D00210C2E /* CoreLayer in Frameworks */,
+				A5B307DF2818229D00210C2E /* DatabaseLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F5532D127FEC824006B0EC7 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				1F5532D427FEC8F5006B0EC7 /* DadJokeRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		1F5532DA27FED091006B0EC7 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				1F5532DB27FED098006B0EC7 /* CoreData */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		1F5532DB27FED098006B0EC7 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				1F60600727F5CB8800EF2551 /* Entity */,
-				1F5AB50A27FDD282006B4C84 /* CoreDataService.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		1F5532E328002AA6006B0EC7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +94,6 @@
 				1FC834A327E31FC300DA180C /* Main.storyboard */,
 				1FC834A927E31FC400DA180C /* Assets.xcassets */,
 				1FC834AB27E31FC400DA180C /* LaunchScreen.storyboard */,
-				1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,19 +106,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		1F60600727F5CB8800EF2551 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1F60600A27F5CBC300EF2551 /* CoreDataJoke.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		1FC8349127E31FC300DA180C = {
 			isa = PBXGroup;
 			children = (
+				A5CFBEE52817F7C400CD8FC9 /* CoreLayer */,
+				A5CFBEEC281806AC00CD8FC9 /* DatabaseLayer */,
+				A5CFBEED28180CDC00CD8FC9 /* NetworkLayer */,
 				1FC8349C27E31FC300DA180C /* DadJokes */,
 				1FC8349B27E31FC300DA180C /* Products */,
+				A5CFBEC92816DE9600CD8FC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,40 +129,23 @@
 		1FC8349C27E31FC300DA180C /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
-				1F5532DA27FED091006B0EC7 /* Database */,
-				1F5532D127FEC824006B0EC7 /* Repository */,
 				1F5AB50527FDBAD0006B4C84 /* Screens */,
 				1F60600127F5A73500EF2551 /* Extensions */,
-				1FC834B427E31FCA00DA180C /* Network */,
 				1F5AB50627FDBAE6006B4C84 /* Resources */,
 				1FC8349D27E31FC300DA180C /* AppDelegate.swift */,
 				1FC8349F27E31FC300DA180C /* SceneDelegate.swift */,
 				1F5532E4280354F1006B0EC7 /* GlobalFunctions.swift */,
-				1F5532F1280449FD006B0EC7 /* ServiceContainer.swift */,
+				A5B307E22818282D00210C2E /* ServiceContainer.swift */,
 				1FC834AE27E31FC400DA180C /* Info.plist */,
 			);
 			path = DadJokes;
 			sourceTree = "<group>";
 		};
-		1FC834B427E31FCA00DA180C /* Network */ = {
+		A5CFBEC92816DE9600CD8FC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1FC834BD27E3268300DA180C /* API */,
-				1FC834B827E31FE000DA180C /* Endpoint.swift */,
-				1FC834B527E31FE000DA180C /* HTTPMethod.swift */,
-				1FC834B727E31FE000DA180C /* AsyncRequestService.swift */,
 			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		1FC834BD27E3268300DA180C /* API */ = {
-			isa = PBXGroup;
-			children = (
-				1FC834BE27E3268C00DA180C /* DadJokeAPI.swift */,
-				1FC834BF27E3268C00DA180C /* DadJokeRequestService.swift */,
-				1FC834C727E3299900DA180C /* DadJoke.swift */,
-			);
-			path = API;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,8 +163,16 @@
 			buildRules = (
 			);
 			dependencies = (
+				A5B307E72819484800210C2E /* PBXTargetDependency */,
+				A5B307E92819484800210C2E /* PBXTargetDependency */,
+				A5B307E5281947C600210C2E /* PBXTargetDependency */,
 			);
 			name = DadJokes;
+			packageProductDependencies = (
+				A5B307DC2818229D00210C2E /* CoreLayer */,
+				A5B307DE2818229D00210C2E /* DatabaseLayer */,
+				A5B307E02818229D00210C2E /* NetworkLayer */,
+			);
 			productName = DadJokes;
 			productReference = 1FC8349A27E31FC300DA180C /* Dad Jokes.app */;
 			productType = "com.apple.product-type.application";
@@ -300,30 +249,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B307E32818282D00210C2E /* ServiceContainer.swift in Sources */,
 				1F5532E9280411B5006B0EC7 /* UIViewController+ErrorAlert.swift in Sources */,
-				1F5AB50B27FDD282006B4C84 /* CoreDataService.swift in Sources */,
-				1FC834BC27E31FE000DA180C /* Endpoint.swift in Sources */,
 				1FC834A227E31FC300DA180C /* DadJokeViewController.swift in Sources */,
-				1F5532F2280449FD006B0EC7 /* ServiceContainer.swift in Sources */,
 				1F833D6C27FDB4A2000DF4EA /* FavoritesTableViewController.swift in Sources */,
-				1FC834BB27E31FE000DA180C /* AsyncRequestService.swift in Sources */,
-				1F60600627F5CA4500EF2551 /* DadJokesData.xcdatamodeld in Sources */,
-				1FC834C827E3299900DA180C /* DadJoke.swift in Sources */,
 				1F5532ED280415CB006B0EC7 /* RootViewController.swift in Sources */,
 				1FC8349E27E31FC300DA180C /* AppDelegate.swift in Sources */,
-				1FC834B927E31FE000DA180C /* HTTPMethod.swift in Sources */,
 				1FC834A027E31FC300DA180C /* SceneDelegate.swift in Sources */,
-				1F60600B27F5CBC300EF2551 /* CoreDataJoke.swift in Sources */,
-				1FC834C027E3268C00DA180C /* DadJokeAPI.swift in Sources */,
-				1F5532D527FEC8F5006B0EC7 /* DadJokeRepository.swift in Sources */,
 				1F60600327F5A75300EF2551 /* UIActivityIndicatorView+Visibility.swift in Sources */,
-				1FC834C127E3268C00DA180C /* DadJokeRequestService.swift in Sources */,
 				1F5532E5280354F1006B0EC7 /* GlobalFunctions.swift in Sources */,
 				1F5532F0280449DD006B0EC7 /* ViewControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5B307E5281947C600210C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A5B307E4281947C600210C2E /* CoreLayer */;
+		};
+		A5B307E72819484800210C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A5B307E62819484800210C2E /* DatabaseLayer */;
+		};
+		A5B307E92819484800210C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A5B307E82819484800210C2E /* NetworkLayer */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1FC834A327E31FC300DA180C /* Main.storyboard */ = {
@@ -544,19 +498,32 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		1F60600427F5CA4500EF2551 /* DadJokesData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */,
-				1F60600527F5CA4500EF2551 /* DadJokesData.xcdatamodel */,
-			);
-			currentVersion = 1F08A0F6280719CE00CE1618 /* DadJokesData 1.1.xcdatamodel */;
-			path = DadJokesData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCSwiftPackageProductDependency section */
+		A5B307DC2818229D00210C2E /* CoreLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreLayer;
 		};
-/* End XCVersionGroup section */
+		A5B307DE2818229D00210C2E /* DatabaseLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DatabaseLayer;
+		};
+		A5B307E02818229D00210C2E /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+		A5B307E4281947C600210C2E /* CoreLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreLayer;
+		};
+		A5B307E62819484800210C2E /* DatabaseLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DatabaseLayer;
+		};
+		A5B307E82819484800210C2E /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FC8349227E31FC300DA180C /* Project object */;
 }

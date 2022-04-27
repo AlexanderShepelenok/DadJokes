@@ -1,12 +1,14 @@
 //
 //  AppDelegate.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 17/03/22.
 //
 
 import UIKit
-import CoreData
+import CoreLayer
+import NetworkLayer
+import DatabaseLayer
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.serviceContainer = ServiceContainer()
+        let databaseService = CoreDataService()
+        let networkService = URLSessionService()
+
+        self.serviceContainer = ServiceContainer(databaseService: databaseService,
+                                                 networkService: networkService,
+                                                 favoritesManager: databaseService,
+                                                 favoritesProviderCreator: databaseService)
         return true
     }
 

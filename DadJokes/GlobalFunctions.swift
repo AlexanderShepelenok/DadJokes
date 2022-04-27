@@ -1,6 +1,6 @@
 //
 //  Global.swift
-//  DadJokes
+// 
 //
 //  Created by Aleksandr on 10/04/22.
 //
